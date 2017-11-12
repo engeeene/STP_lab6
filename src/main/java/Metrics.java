@@ -1,4 +1,4 @@
-public class Metrics {
+class Metrics {
     //private static long timeUsed = 0;
     //private static long memoryUsed = 0;
 
@@ -9,25 +9,25 @@ public class Metrics {
     private static long timeEnd = 0;
     private static long memoryEnd = 0;
 
-    public static void start() {
+    static void start() {
         timeStart = System.nanoTime();
         memoryStart = Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
     }
 
-    public static void stop() {
+    static void stop() {
         timeEnd = System.nanoTime();
         memoryEnd = Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
     }
 
-    public static double getTime() {
+    static double getTime() {
         return (double)(timeEnd - timeStart)/1000000000;
     }
 
-    public static double getMemory() {
+    static double getMemory() {
         return (double)(memoryEnd - memoryStart)/1024/1024;
     }
 
-    public static void clear(){
+    static void clear(){
         timeStart = 0;
         memoryStart = 0;
         timeEnd = 0;

@@ -3,7 +3,7 @@ import PrefixTree.PrefixTree;
 import java.io.*;
 import java.util.ArrayList;
 
-public class Words {
+class Words {
     private String path;
     private BufferedReader reader;
     private ArrayList<String> allWords;
@@ -14,7 +14,7 @@ public class Words {
     private String maxSecond = "";
 
 
-    public Words(String path) throws FileNotFoundException {
+    Words(String path) throws FileNotFoundException {
         setPath(path);
         allWords = new ArrayList<String>();
     }
@@ -27,7 +27,7 @@ public class Words {
         }
     }
 
-    public void start() {
+    void start() {
 
         try {
             String newWord;
@@ -44,10 +44,11 @@ public class Words {
             int concatenationLevel;
             for (String word : allWords) {
                 concatenationLevel = isConcatenated(word);
-                if (concatenationLevel == 0) {
-                    System.out.println("Tree does not have word " + word);
-                    return;
-                } else if (concatenationLevel == 1) {
+//                if (concatenationLevel == 0) {
+//                    System.out.println("Tree does not have word " + word);
+//                    return;
+//                } else
+                if (concatenationLevel == 1) {
                     simpleWords++;
                 } else {
                     concatenatedWords++;
@@ -75,27 +76,27 @@ public class Words {
         return 0;
     }
 
-    public int getSimpleWords() {
+    int getSimpleWords() {
         return simpleWords;
     }
 
-    public int getConcatenatedWords() {
+    int getConcatenatedWords() {
         return concatenatedWords;
     }
 
-    public String getMaxFirst() {
+    String getMaxFirst() {
         return max;
     }
 
-    public String getMaxSecond() {
+    String getMaxSecond() {
         return maxSecond;
     }
 
-    public int getMaxFirstLength() {
+    int getMaxFirstLength() {
         return max.length();
     }
 
-    public int getMaxSecondLength() {
+    int getMaxSecondLength() {
         return maxSecond.length();
     }
 }

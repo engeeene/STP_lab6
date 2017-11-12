@@ -3,8 +3,11 @@
 Solving word-break problem using Prefix Tree.
 
 Simple words **76421**.
+
 Concatenated words **97107**.
+
 First longest concatenated word is **ethylenediaminetetraacetates** with length **28**.
+
 Second longest concatenated word is **electroencephalographically** with length **27**.
 
 [![Build Status](https://travis-ci.org/engeeene/STP_lab6.svg?branch=master)](https://travis-ci.org/engeeene/STP_lab6)

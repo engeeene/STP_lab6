@@ -1,0 +1,9 @@
+cat
+cats
+dog
+rat
+catsdog
+ratcat
+catflycat
+fly
+waffentrager

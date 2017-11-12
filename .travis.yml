@@ -14,11 +14,6 @@ before_script:
     - export GRADLE_HOME=$PWD/gradle-2.14
     - export PATH=$GRADLE_HOME/bin:$PATH
 
-script:
-  - ./gradlew assemble
-  - ./gradlew check
-  - ./gradlew codeCoverageReport
-
 after_success:
   - bash <(curl -s https://codecov.io/bash)
   - java -cp ~/codacy-coverage-reporter-assembly-latest.jar com.codacy.CodacyCoverageReporter -l Java -r build/reports/jacoco/test/jacocoTestReport.xml

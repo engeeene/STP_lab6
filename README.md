@@ -6,6 +6,8 @@ Simple words **76421**.
 
 Concatenated words **97107**.
 
+Partially concatenated words **70851**.
+
 First longest concatenated word is **ethylenediaminetetraacetates** with length **28**.
 
 Second longest concatenated word is **electroencephalographically** with length **27**.

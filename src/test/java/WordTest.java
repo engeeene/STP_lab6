@@ -8,6 +8,7 @@ public class WordTest {
             Words solver = new Words("wordsTest.txt");
             solver.start();
             Assert.assertEquals("Solve Test fail Concatenated Words", solver.getConcatenatedWords(), 3);
+            Assert.assertEquals("Solve Test fail Partially Concatenated Words", solver.getPartiallyConcatenatedWords(), 1);
             Assert.assertEquals("Solve Test fail Simple Words", solver.getSimpleWords(), 6);
             Assert.assertEquals("Solve Test fail Max First", solver.getMaxFirst(),"catflycat");
             Assert.assertEquals("Solve Test fail Max Second", solver.getMaxSecond(),"catsdog");

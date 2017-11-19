@@ -12,15 +12,24 @@ public class PrefixTreeTest {
         testList.add("cat");
         PrefixTree prefixTree = new PrefixTree(testList);
 
-        Assert.assertTrue("PrefixTree Test Insert", prefixTree.contains("cat"));
+        Assert.assertTrue("PrefixTree Test Insert", prefixTree.startsWith("cat"));
     }
 
     @Test
-    public void testPrefixTreeContains() {
+    public void testPrefixTreeStartsWith() {
         ArrayList<String> testList = new ArrayList<>();
         testList.add("cat");
         PrefixTree prefixTree = new PrefixTree(testList);
 
-        Assert.assertFalse("PrefixTree Test not Contains", prefixTree.contains("dog"));
+        Assert.assertFalse("PrefixTree Test Contains", prefixTree.startsWith("dog"));
+    }
+
+    @Test
+    public void testPrefixTreeisContained() {
+        ArrayList<String> testList = new ArrayList<>();
+        testList.add("cat");
+        PrefixTree prefixTree = new PrefixTree(testList);
+
+        Assert.assertTrue(prefixTree.isContained("cats"));
     }
 }

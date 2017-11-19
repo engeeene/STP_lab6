@@ -10,6 +10,7 @@ class Words {
     private PrefixTree prefixTree;
     private int simpleWords = 0;
     private int concatenatedWords = 0;
+    private int partiallyConcatenatedWords = 0;
     private String max = "";
     private String maxSecond = "";
 
@@ -50,6 +51,9 @@ class Words {
 //                } else
                 if (concatenationLevel == 1) {
                     simpleWords++;
+                    if (prefixTree.isContained(word)) {
+                        partiallyConcatenatedWords++;
+                    }
                 } else {
                     concatenatedWords++;
                     if (word.length() > max.length()) {
@@ -65,7 +69,7 @@ class Words {
 
     private int isConcatenated(String word) {
         for (int i = 1; i <= word.length(); i++) {
-            if (prefixTree.contains(word.substring(0, i))) {
+            if (prefixTree.startsWith(word.substring(0, i))) {
                 if (i == word.length()) {
                     return 1;
                 } else if (isConcatenated(word.substring(i)) > 0) {
@@ -82,6 +86,10 @@ class Words {
 
     int getConcatenatedWords() {
         return concatenatedWords;
+    }
+
+    public int getPartiallyConcatenatedWords() {
+        return partiallyConcatenatedWords;
     }
 
     String getMaxFirst() {
